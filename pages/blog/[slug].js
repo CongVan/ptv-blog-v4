@@ -19,6 +19,13 @@ import PostSharing from "../../components/PostSharing";
 import PostCard from "../../components/PostCard";
 const GitalkComponent = dynamic(() => import("gitalk/dist/gitalk-component"));
 
+const CONFIG = {
+  GITHUB_CLIENT_ID: process.env.GITHUB_CLIENT_ID,
+  GITHUB_CLIENT_SECRET: process.env.GITHUB_CLIENT_SECRET,
+  GITHUB_REPO: process.env.GITHUB_REPO,
+  GITHUB_OWNER: process.env.GITHUB_OWNER,
+};
+
 const PostPage = ({ post, recordMap = {}, relatedPost = [] }) => {
   const router = useRouter();
   const summaryRef = useRef(null);
@@ -142,12 +149,12 @@ const PostPage = ({ post, recordMap = {}, relatedPost = [] }) => {
                 {process.browser && post && post.id && (
                   <GitalkComponent
                     options={{
-                      clientID: process.env.GITHUB_CLIENT_ID,
-                      clientSecret: process.env.GITHUB_CLIENT_SECRET,
-                      repo: process.env.GITHUB_REPO, // The repository of store comments,
+                      clientID: CONFIG.GITHUB_CLIENT_ID,
+                      clientSecret: CONFIG.GITHUB_CLIENT_SECRET,
+                      repo: CONFIG.GITHUB_REPO, // The repository of store comments,
                       title: post.title,
-                      owner: process.env.GITHUB_OWNER,
-                      admin: [process.env.GITHUB_OWNER],
+                      owner: CONFIG.GITHUB_OWNER,
+                      admin: [CONFIG.GITHUB_OWNER],
                       id: post.id, // Ensure uniqueness and length less than 50
                       distractionFreeMode: false, // Facebook-like distraction free mode
                     }}
