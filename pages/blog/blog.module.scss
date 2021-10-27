@@ -1,0 +1,30 @@
+.postContent {
+  position: relative;
+}
+.postContent :global(.notion-header) {
+  display: none !important;
+}
+.postContent :global(.notion-viewport) {
+  display: none !important;
+}
+
+.postContent :global(.notion-aside) {
+  --select-color-0: theme("colors.orange.500");
+}
+
+.postContent :global(.notion-aside .notion-aside-table-of-contents-header) {
+  align-self: flex-start;
+}
+
+.postSummary {
+  @apply mx-auto w-full justify-between flex items-center mb-8;
+}
+.postBody {
+  margin: 0 auto;
+  padding-top: 2rem !important;
+
+  @screen md {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}

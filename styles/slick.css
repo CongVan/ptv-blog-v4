@@ -1,0 +1,13 @@
+/*! purgecss start ignore */
+@import "slick-carousel/slick/slick.css";
+/*! purgecss end ignore*/
+
+.custom-slider .slick-list .slick-track .slick-slide > div {
+  @apply h-full;
+}
+.custom-slider .slick-list .slick-track .slick-slide {
+  @apply h-auto;
+}
+.custom-slider .slick-list .slick-track {
+  @apply flex;
+}
