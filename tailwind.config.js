@@ -8,14 +8,6 @@ module.exports = {
       "./components/*.js",
       "./components/**/*.js",
     ],
-    // safelist: ["notion", "notion-app"],
-    // These options are passed through directly to PurgeCSS
-    options: {
-      deep: [/^notion/, "notion-app", "post-content"],
-      safelist: [/^notion-/, /^notion/, "post-content"],
-      keyframes: true,
-      fontFace: true,
-    },
   },
   theme: {
     extend: {
@@ -90,6 +82,7 @@ module.exports = {
   variants: {
     extend: {
       boxShadow: ["active", "hover"],
+      borderWidth: ["hover", "focus"],
     },
   },
   plugins: [

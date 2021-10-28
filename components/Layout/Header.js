@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import ButtonOutline from "../misc/ButtonOutline.";
+// import ButtonOutline from "../misc/ButtonOutline";
 import LogoVPN from "../../public/assets/Logo.svg";
 import {
   RiArticleLine,
@@ -8,6 +8,7 @@ import {
   RiTeamLine,
   RiGlobalLine,
   RiInformationLine,
+  RiSearchLine,
 } from "react-icons/ri";
 
 const Header = () => {
@@ -66,7 +67,7 @@ const Header = () => {
                     : " text-black-500 hover:text-orange-500 ")
                 }
               >
-                Feature
+                Service
               </a>
             </Link>
             <Link href="/#pricing">
@@ -81,7 +82,7 @@ const Header = () => {
                     : " text-black-500 hover:text-orange-500 ")
                 }
               >
-                Pricing
+                Team
               </a>
             </Link>
             <Link href="/#testimoni">
@@ -96,7 +97,7 @@ const Header = () => {
                     : " text-black-500 hover:text-orange-500 ")
                 }
               >
-                Testimonial
+                Contact
               </a>
             </Link>
             <Link
@@ -116,12 +117,12 @@ const Header = () => {
             </Link>
           </ul>
           <div className="col-start-10 col-end-12 font-medium flex justify-end items-center">
-            <Link href="/">
-              <a className="text-black-600 mx-2 sm:mx-4 capitalize tracking-wide hover:text-orange-500 transition-all">
-                  Sign In
-              </a>
-            </Link>
-            <ButtonOutline>Sign Up</ButtonOutline>
+            <div className="relative">
+              <input className="input border-2 pr-8 peer hidden md:block"></input>
+              <div className="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-600 peer-focus:text-black-500">
+                <RiSearchLine size={24} />
+              </div>
+            </div>
           </div>
         </nav>
       </header>

@@ -16,20 +16,19 @@ import "gitalk/dist/gitalk.css";
 import Styles from "./blog.module.scss";
 import dynamic from "next/dynamic";
 import PostSharing from "../../components/PostSharing";
-import PostCard from "../../components/PostCard";
+import PostCard, { PostTag } from "../../components/PostCard";
 const GitalkComponent = dynamic(() => import("gitalk/dist/gitalk-component"));
-
-const CONFIG = {
-  GITHUB_CLIENT_ID: process.env.GITHUB_CLIENT_ID,
-  GITHUB_CLIENT_SECRET: process.env.GITHUB_CLIENT_SECRET,
-  GITHUB_REPO: process.env.GITHUB_REPO,
-  GITHUB_OWNER: process.env.GITHUB_OWNER,
-};
 
 const PostPage = ({ post, recordMap = {}, relatedPost = [] }) => {
   const router = useRouter();
   const summaryRef = useRef(null);
-
+  // const CONFIG = {
+  //   GITHUB_CLIENT_ID: process.env.GITHUB_CLIENT_ID,
+  //   GITHUB_CLIENT_SECRET: process.env.GITHUB_CLIENT_SECRET,
+  //   GITHUB_REPO: process.env.GITHUB_REPO,
+  //   GITHUB_OWNER: process.env.GITHUB_OWNER,
+  // };
+  // console.log("config", CONFIG);
   const links = useMemo(() => {
     if (router.isFallback) return [];
     return [
@@ -97,7 +96,7 @@ const PostPage = ({ post, recordMap = {}, relatedPost = [] }) => {
                         )}
                       </div>
                       <div className="pb-4">
-                        <PostCard.Tags tags={post.tags} />
+                        <PostTag tags={post.tags} />
                       </div>
                     </>
                   }
@@ -149,12 +148,12 @@ const PostPage = ({ post, recordMap = {}, relatedPost = [] }) => {
                 {process.browser && post && post.id && (
                   <GitalkComponent
                     options={{
-                      clientID: CONFIG.GITHUB_CLIENT_ID,
-                      clientSecret: CONFIG.GITHUB_CLIENT_SECRET,
-                      repo: CONFIG.GITHUB_REPO, // The repository of store comments,
+                      clientID: "fa7caa253a8a19d8ea15",
+                      clientSecret: "d55b6caef24e2013165e3c56372b0e21985572eb",
+                      repo: "blog-comment", // The repository of store comments,
                       title: post.title,
-                      owner: CONFIG.GITHUB_OWNER,
-                      admin: [CONFIG.GITHUB_OWNER],
+                      owner: "PTV-Team",
+                      admin: ["PTV-Team"],
                       id: post.id, // Ensure uniqueness and length less than 50
                       distractionFreeMode: false, // Facebook-like distraction free mode
                     }}

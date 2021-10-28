@@ -20,7 +20,7 @@
     "gitalk": "^1.7.2",
     "lodash": "^4.17.21",
     "moment": "^2.29.1",
-    "next": "^11.1.2",
+    "next": "^12.0.1",
     "next-seo": "^4.28.1",
     "next-share": "^0.12.2",
     "notion-client": "^4.10.0",

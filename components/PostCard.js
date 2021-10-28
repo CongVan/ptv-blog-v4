@@ -15,7 +15,7 @@ const colorTag = {
   red: ["text-notion-red", "bg-notion-red_bg"],
 };
 
-const PostTag = ({ tags = [] }) => {
+export const PostTag = ({ tags = [] }) => {
   return (
     <div className="flex flex-wrap items-center">
       {tags.map((tag) => (
@@ -39,7 +39,18 @@ const PostCard = ({ post }) => {
         className={`bg-white group cursor-pointer w-full flex flex-col h-full ${Styles.card}`}
       >
         <div className={`${Styles.cardImage}  aspect-w-5 aspect-h-3 `}>
-          <Image src={post.cover} layout="fill" objectFit="cover"></Image>
+          <Image
+            // loader={({ src, width, quality }) => {
+            //   return `${src}?w=${400}&q=${quality || 75}`;
+            // }}
+            width={300}
+            height={200}
+            src={post.cover}
+            placeholder={"blur"}
+            blurDataURL={post.cover}
+            layout="fill"
+            objectFit="cover"
+          ></Image>
         </div>
         <div className="mt-4 flex-1 flex flex-col">
           <PostTag tags={post.tags} />
