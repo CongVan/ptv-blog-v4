@@ -27,5 +27,6 @@ export const getStaticProps = async () => {
     props: {
       team: data?.results || [],
     },
+    revalidate: 10,
   };
 };
