@@ -1,0 +1,50 @@
+.avatar {
+  @apply transition-all ease-in-out duration-500 transform origin-top-left scale-x-125 scale-y-125;
+  // @apply filter grayscale;
+  filter: grayscale(0.8);
+}
+
+.card {
+  @apply flex flex-col;
+  &:hover {
+    .avatar {
+      @apply scale-100 grayscale-0 filter;
+    }
+  }
+  &:hover {
+    .socials {
+      li {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.socials {
+  @apply space-x-4;
+  li {
+    @apply h-10 w-10 bg-white-500 text-orange-500 rounded-full inline-flex items-center justify-center;
+    @apply duration-300 ease-in-out;
+    @apply cursor-pointer;
+  }
+  @screen md {
+    li {
+      &:nth-child(2) {
+        transition-delay: 0.15s;
+        transform: translateX(125%);
+      }
+      &:nth-child(3) {
+        transition-delay: 0.2s;
+        transform: translateX(130%);
+      }
+      &:nth-child(4) {
+        transition-delay: 0.35s;
+        transform: translateX(135%);
+      }
+      @apply opacity-0;
+      transition: transform 0.4s ease-in-out, opacity 0.1s ease;
+      transform: translateX(120%);
+    }
+  }
+}

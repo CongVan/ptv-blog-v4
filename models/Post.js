@@ -10,6 +10,7 @@ export const PostTransform = {
       key: "slug",
       transform: (value, object) => {
         const title = get(object, "properties.Name.title.0.text.content");
+        console.log(object.properties);
         return `/blog/${slugify(title + "", { lower: true, trim: true })}-${
           object.id + ""
         }`;

@@ -1,0 +1,39 @@
+.item {
+  @apply flex items-center justify-start sm:justify-center py-4 sm:py-6 px-4 sm:pl-6 sm:w-auto mx-auto sm:mx-0 group;
+  @apply relative overflow-hidden rounded-md;
+
+  &::before {
+    @apply bg-orange-500 absolute w-full h-full;
+
+    content: "";
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    transform: translateX(-500px);
+    transition: transform 0.4s cubic-bezier(0.66, -0.14, 0.28, 0.18),
+      opacity 0.3s ease-in-out;
+    opacity: 0;
+  }
+
+  &:hover {
+    &:before {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    .name {
+      @apply text-white-500;
+    }
+    .intro {
+      @apply text-white-300;
+    }
+  }
+}
+.name {
+  @apply text-xl text-black-600 font-bold flex-grow;
+  @apply transition-colors duration-200 delay-100 ease-in-out;
+}
+.intro {
+  @apply text-lg text-black-500;
+  @apply transition-colors duration-200 delay-100 ease-in-out;
+}

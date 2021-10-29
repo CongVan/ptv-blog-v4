@@ -77,6 +77,9 @@ module.exports = {
       maxWidth: {
         notion: "var(--notion-max-width)",
       },
+      minWidth: {
+        16: "4rem",
+      },
     },
   },
   variants: {

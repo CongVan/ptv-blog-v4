@@ -1,0 +1,38 @@
+.item {
+  @apply bg-orange-100 bg-opacity-40 flex relative shadow-none transition-all ease-in-out duration-300 overflow-hidden;
+
+  transition: shadow 0.3s ease-in-out 0.4s;
+  &::before {
+    content: "";
+    width: 2px;
+    @apply h-full bg-gray-200 absolute left-9 top-0;
+    z-index: 0;
+  }
+  &::after {
+    @apply h-0 bg-transparent absolute left-9 top-0 transition-all duration-500 ease-in-out origin-top;
+    width: 2px;
+    z-index: 1;
+    content: "";
+  }
+  .step {
+    @apply bg-orange-100 w-10 h-10 rounded-full mt-8  flex justify-center items-center text-orange-500 font-semibold ml-4;
+    @apply transition-all duration-500 ease-in-out transform;
+    min-width: 40px;
+    z-index: 2;
+  }
+  .content {
+    @apply ml-4 p-4;
+  }
+  &:hover {
+    &::after {
+      @apply h-full bg-orange-500;
+    }
+    .step {
+      @apply bg-orange-500 text-white-500 scale-125;
+    }
+  }
+
+  &:nth-child(odd) {
+    @apply bg-opacity-10;
+  }
+}

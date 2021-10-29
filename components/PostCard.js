@@ -38,17 +38,18 @@ const PostCard = ({ post }) => {
       <a
         className={`bg-white group cursor-pointer w-full flex flex-col h-full ${Styles.card}`}
       >
-        <div className={`${Styles.cardImage}  aspect-w-5 aspect-h-3 `}>
+        <div className={`${Styles.cardImage} `}>
           <Image
             // loader={({ src, width, quality }) => {
             //   return `${src}?w=${400}&q=${quality || 75}`;
             // }}
-            width={300}
-            height={200}
+            width={600}
+            height={300}
+            layout="responsive"
             src={post.cover}
             placeholder={"blur"}
             blurDataURL={post.cover}
-            layout="fill"
+            // layout="fill"
             objectFit="cover"
           ></Image>
         </div>

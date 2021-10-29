@@ -118,8 +118,8 @@ const Header = () => {
           </ul>
           <div className="col-start-10 col-end-12 font-medium flex justify-end items-center">
             <div className="relative">
-              <input className="input border-2 pr-8 peer hidden md:block"></input>
-              <div className="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-600 peer-focus:text-black-500">
+              <input className="input rounded-lg border-2 pr-8 peer hidden md:block"></input>
+              <div className="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-600 md:text-gray-500 peer-focus:text-black-500">
                 <RiSearchLine size={24} />
               </div>
             </div>
@@ -128,7 +128,7 @@ const Header = () => {
       </header>
       {/* Mobile Navigation */}
 
-      <nav className="fixed lg:hidden bottom-0 left-0 right-0 z-20 px-4 sm:px-8 shadow-t bg-white-500">
+      <nav className="fixed lg:hidden bottom-0 left-0 right-0 z-20 px-0 sm:px-8 shadow-t bg-white-500">
         <div className="bg-white-500 sm:px-3">
           <ul className="flex w-full justify-between items-center text-black-500">
             <Link href="/#about">

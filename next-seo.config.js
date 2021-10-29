@@ -1,21 +1,21 @@
 export default {
-  title: "K-Solution",
-  description: "K-Solution",
+  title: "Kit Solution",
+  description: "Kit Solution",
   canonical: "https://www.ksolutoin.tech",
   openGraph: {
     url: "https://ksolution.tech",
-    title: "K-Solution",
-    description: "K-Solution",
+    title: "Kit Solution",
+    description: "Kit Solution",
     images: [
       {
         url: "/assets/media_social.png",
         width: 800,
         height: 600,
-        alt: "K-Solution",
+        alt: "Kit Solution",
         type: "image/png",
       },
     ],
-    site_name: "K-Solution",
+    site_name: "Kit Solution",
   },
   additionalLinkTags: [
     {
