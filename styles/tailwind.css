@@ -74,6 +74,7 @@ li.check:before {
   }
   .input {
     @apply pl-4 w-full h-10 border border-gray-500 rounded-md focus:outline-none focus:border-black-500;
+    @apply transition-all duration-200 ease-in-out;
   }
 }
 

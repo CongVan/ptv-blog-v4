@@ -9,7 +9,6 @@ export const getTeam = async (params = {}) => {
       ...params,
     });
     data = resp;
-    console.log(JSON.stringify(results, null, 2));
     data.results = results.map(MemberMapper);
   } catch (error) {
     console.error(error);

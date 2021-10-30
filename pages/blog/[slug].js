@@ -16,19 +16,12 @@ import "gitalk/dist/gitalk.css";
 import Styles from "./blog.module.scss";
 import dynamic from "next/dynamic";
 import PostSharing from "../../components/PostSharing";
-import PostCard, { PostTag } from "../../components/PostCard";
+import { PostTag } from "../../components/PostCard";
 const GitalkComponent = dynamic(() => import("gitalk/dist/gitalk-component"));
 
 const PostPage = ({ post, recordMap = {}, relatedPost = [] }) => {
   const router = useRouter();
   const summaryRef = useRef(null);
-  // const CONFIG = {
-  //   GITHUB_CLIENT_ID: process.env.GITHUB_CLIENT_ID,
-  //   GITHUB_CLIENT_SECRET: process.env.GITHUB_CLIENT_SECRET,
-  //   GITHUB_REPO: process.env.GITHUB_REPO,
-  //   GITHUB_OWNER: process.env.GITHUB_OWNER,
-  // };
-  // console.log("config", CONFIG);
   const links = useMemo(() => {
     if (router.isFallback) return [];
     return [
@@ -68,6 +61,9 @@ const PostPage = ({ post, recordMap = {}, relatedPost = [] }) => {
                   bodyClassName={Styles.postBody}
                   minTableOfContentsItems={0}
                   showTableOfContents={true}
+                  mapImageUrl={(url, block) => {
+                    return url;
+                  }}
                   pageHeader={
                     <>
                       <div

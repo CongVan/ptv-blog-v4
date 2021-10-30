@@ -86,6 +86,9 @@ module.exports = {
     extend: {
       boxShadow: ["active", "hover"],
       borderWidth: ["hover", "focus"],
+      scale: ["active", "group-hover"],
+      translate: ["active", "group-hover"],
+      display: ["hover", "focus", "group-hover"],
     },
   },
   plugins: [

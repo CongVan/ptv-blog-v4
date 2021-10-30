@@ -1,5 +1,6 @@
 import "../styles/tailwind.css";
 import "../styles/slick.css";
+import "../styles/global.scss";
 import { DefaultSeo } from "next-seo";
 import SEO from "../next-seo.config";
 
